@@ -1,4 +1,4 @@
-package es.unican.is2.SegurosGUI;
+	package es.unican.is2.SegurosGUI;
 
 
 
@@ -30,14 +30,13 @@ public class VistaAgente extends JFrame {
 	private JTextField txtDniCliente;
 	private JTextField txtTotalCliente;
 	private JTextField txtNombreCliente;
-	private JList<String> listSeguros; 
+	private JList<String> listSeguros;
 	private DefaultListModel<String> listModel;
 	private JButton btnBuscar;
-	
 	private IGestionClientes clientes;
 	private IGestionSeguros seguros;
 	private IInfoSeguros info;
-
+	
 	/**
 	 * Create the frame.
 	 */
@@ -57,8 +56,7 @@ public class VistaAgente extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		listModel=  new DefaultListModel<String>();
-		
+		listModel=new DefaultListModel<String>();
 		txtTotalCliente = new JTextField();
 		txtTotalCliente.setBounds(230, 251, 180, 20);
 		contentPane.add(txtTotalCliente);
@@ -107,7 +105,7 @@ public class VistaAgente extends JFrame {
 		btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				rellenaDatosCliente(txtNombreCliente.getText());
+				rellenaDatosCliente(txtDniCliente.getText().toUpperCase());
 			}
 		});
 		btnBuscar.setBounds(21, 122, 89, 23);
@@ -138,6 +136,5 @@ public class VistaAgente extends JFrame {
 			txtTotalCliente.setText("");
 			listModel.removeAllElements();
 		}
-		
 	}
 }
